@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <script>
+    "use strict";
+    let lastDigit,num100;
+    let num= prompt('Сколько птиц на ветке?');
+    if(num>100){
+    num100=num%100;
+ }else{
+ num100=num;
+ }
+  lastDigit=num100%10;
+if(num100 == 1){
+  alert('На ветке сидит '+num+' ворона');
+  }
+  else if((num100==2) || (num100==3) ||(num100==4)){
+    alert('На ветке сидит '+num+' вороны');
+  } else{
+  switch(num100){
+  case 11:
+  alert('На ветке сидит '+num+' ворон');
+  break;
+  case 22:
+  case 33:
+  case 44:
+  alert('На ветке сидит '+num+' вороны');
+  break;
+  default:
+if(lastDigit==1) { alert('На ветке сидит '+num+' ворона');}
+  else if(lastDigit == 2||lastDigit == 3||lastDigit== 4||lastDigit==0||lastDigit==5||lastDigit==6||lastDigit==7||lastDigit==9||lastDigit==8){
+  alert('На ветке сидит '+num+' ворон');}
+  }
+  }
+  
+  </script>
+
+</body>
+
+</html>
