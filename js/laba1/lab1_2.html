@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang = "ru">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Задание 2</title>
+	</head>
+<body>
+
+  <script>
+    "use strict";
+    let lastDigit;
+    let num = prompt('cколько птиц на ветке?');
+    lastDigit = num % 10;
+    if (((num % 100) > 10) && ((num % 100) < 15)) {
+      alert(`На ветке сидит ${num} ворон`)
+    }
+    else if (lastDigit == 1) {
+
+      alert(`На ветке сидит ${num} ворона`);
+    }
+    else if (lastDigit == 2 || lastDigit == 3 || lastDigit == 4) {
+      alert(`На ветке сидит ${num} вороны`);
+    }
+    else { alert(`На ветке сидит ${num} ворон`); }
+
+    console.log(lastDigit);
+    switch (lastDigit) {
+      case 1:
+        console.log(`На ветке сидит ${num} ворона`); break;
+      case 2:
+      case 3:
+      case 4:
+        console.log(`На ветке сидит ${num} вороны`); break;
+      default:
+        console.log(`На ветке сидит ${num} ворон`);
+    }
+
+
+  </script>
+
+</body>
+
+</html>
