@@ -4,13 +4,13 @@
   <script>
     "use strict";
     let obj = {
-        className: 'open menu'
-    }
+        className: 'open menu',
+    
 
-    function addClass(obj, cls){
+    addClass:function(cls){
         let subObj = {};
         // если свойство существует, получаем из его классов масив.
-        let arr = obj.className ? obj.className.split(" "):[];
+        let arr = this.className ? this.className.split(" "):[];
         // заносим элементы в объект.
         for(let i=0;i<arr.length;i++){
             subObj[arr[i]] = true;
@@ -20,20 +20,23 @@
         // получаем из свойств объекта, массив.
         arr = Object.keys(subObj);        
         // присваеваем свойству объекта, новый список классов.
-        obj.className = arr.join(" ");        
-    }
-    function removeClass(obj, cls) {
-			let sub = " " + obj.className + " ";
+    this.className = arr.join(" ");        
+    return this
+    },
+    removeClass: function(cls) {
+			let sub = " " + this.className + " ";
 			sub = sub.replace(" " + cls + " ", " ");
-			obj.className = sub.trim(" ");
+			this.className = sub.trim(" ");
+            return this
 		}
+    };
 
-    addClass(obj, 'new'); // obj.className='open menu new'
-    addClass(obj, 'open');  // без изменений (класс уже существует)
-    addClass(obj, 'me'); // obj.className='open menu new me'
+    addClass('new'); // obj.className='open menu new'
+    addClass('open');  // без изменений (класс уже существует)
+    addClass('me'); // obj.className='open menu new me'
 
     alert(obj.className);
-    removeClass(obj.me);
+    removeClass(me);
     alert(obj.className);
 </script>
 </body>

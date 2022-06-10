@@ -84,7 +84,7 @@ function fibs(t) {
  * @return новый сорт. массив
  */
 function arrReverseSorted(arr){
-let arr_reserve=[];
+let arr_reserve;
 arr_reserve=arr.slice();
 arr_reserve=sort((a, b) => b - a);
 
